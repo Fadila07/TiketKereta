@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".tampilan.Help" />
-        <activity android:name=".tampilan.Login" />
-        <activity android:name=".tampilan.welcome" />
+        <activity android:name=".tampilan.LoginActivity"></activity>
         <activity android:name=".tampilan.screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -76,56 +76,56 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/nameText"
         android:layout_width="266dp"
         android:layout_height="44dp"
         android:layout_marginTop="44dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Your Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/addressText"
         android:layout_width="265dp"
         android:layout_height="41dp"
         android:layout_marginTop="6dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Your Address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/telp"
         android:layout_width="266dp"
         android:layout_height="44dp"
         android:layout_marginTop="6dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="08xxxxxxx"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/addressText" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/jmlpenumpang"
         android:layout_width="108dp"
         android:layout_height="39dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/telp" />
 
     <TextView
         android:id="@+id/textView13"
@@ -142,36 +142,30 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="363dp"
-        android:layout_height="89dp"
+        android:id="@+id/kereta"
+        android:layout_width="469dp"
+        android:layout_height="66dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/gajayana"
             android:layout_width="324dp"
             android:layout_height="wrap_content"
             android:text="Gajayana" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/matarmaja"
             android:layout_width="324dp"
             android:layout_height="wrap_content"
             android:text="Matarmaja" />
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
-            android:text="Malabar" />
-
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonsubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
@@ -179,6 +173,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+        app:layout_constraintTop_toBottomOf="@+id/kereta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

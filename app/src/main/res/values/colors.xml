@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="text">#FFFFFF</color>
     <color name="help">#54ABDA</color>
+    <color name="signin">#FF8F00</color>
+    <color name="btlogin">#0B0B0C</color>
 </resources>
