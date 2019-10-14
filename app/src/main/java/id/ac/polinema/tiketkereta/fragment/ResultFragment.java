@@ -9,22 +9,31 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.zip.Inflater;
 
 import id.ac.polinema.tiketkereta.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Login.OnFragmentInteractionListener} interface
+ * {@link ResultFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class Login extends Fragment {
+public class ResultFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private String info;
 
-    public Login() {
+    public ResultFragment() {
         // Required empty public constructor
+    }
+    public void setInfo(String n) {
+        this.info = n;
+    }
+    public String getInfo() {
+        return this.info;
     }
 
 
@@ -32,25 +41,12 @@ public class Login extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
-        Button login = view.findViewById(R.id.btnlogin);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(mListener != null){
-                    mListener.onLoginClicked();
-                }
-            }
-        });
+        View view =  inflater.inflate(R.layout.fragment_result, container, false);
+        TextView info = view.findViewById(R.id.resultText);
+        String n = this.getInfo();
+        info.setText(n);
         return view;
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
-//    public void onButtonPressed(Uri uri) {
-//        if (mListener != null) {
-//            mListener.onFragmentInteraction(uri);
-//        }
-//    }
 
     @Override
     public void onAttach(Context context) {
@@ -81,7 +77,6 @@ public class Login extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-//        void onFragmentInteraction(Uri uri);
-        void onLoginClicked();
+        void onFragmentInteraction(Uri uri);
     }
 }

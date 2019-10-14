@@ -1,9 +1,6 @@
 package id.ac.polinema.tiketkereta.Util;
 
 public class Pesan {
-    public static final int GAJAYANA = 0;
-    public static final int MATARMAJA = 1;
-    public static final int MALABAR = 2;
 
     private int kereta;
     private int penumpang;
@@ -15,19 +12,19 @@ public class Pesan {
         this.total = calculate();
     }
 
-    public int getTotal(){
-        return total;
+    private int calculate() {
+        int n = 0;
+        switch (kereta) {
+            case 0:
+                n = penumpang * 350000; break;
+            case 1:
+                n = penumpang * 110000; break;
+        }
+        return n;
     }
 
-    private int calculate() {
-        switch (kereta) {
-            case GAJAYANA:
-                return penumpang * 350000;
-            case MATARMAJA:
-                return penumpang * 110000;
-            default:
-                return 0;
-        }
+    public int getTotal(){
+        return total;
     }
 
 }

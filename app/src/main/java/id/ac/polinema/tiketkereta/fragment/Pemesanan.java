@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,16 +19,10 @@ import android.widget.Toast;
 import id.ac.polinema.tiketkereta.R;
 import id.ac.polinema.tiketkereta.Util.Pesan;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Pemesanan.OnFragmentInteractionListener} interface
- * to handle interaction events.
- */
-public class Pemesanan extends Fragment {
-
+public class Pemesanan extends Fragment{
 
     private OnFragmentInteractionListener mListener;
+    private ResultFragment resultFragment;
 
     public Pemesanan() {
         // Required empty public constructor
@@ -53,7 +48,12 @@ public class Pemesanan extends Fragment {
                     int checkId = keretagroup.getCheckedRadioButtonId();
                     if((checkId != -1) && !TextUtils.isEmpty(penumpangString)){
                         int jumlah = Integer.parseInt(penumpangString);
-                        int krt = (checkId == R.id.gajayana) ? Pesan.GAJAYANA : Pesan.MATARMAJA;
+                        int krt;
+                        if (checkId == R.id.gajayana) {
+                            krt = 0;
+                        } else{
+                            krt = 1;
+                        }
                         Pesan pesan = new Pesan(jumlah, krt);
                         mListener.onSubmitClicked(pesan.getTotal());
                     }
