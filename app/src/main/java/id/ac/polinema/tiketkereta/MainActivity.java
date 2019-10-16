@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             , ResultFragment.OnFragmentInteractionListener {
 
 
+    private ResultFragment resultFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         loadFragment(new Pemesanan());
+        resultFragment = new ResultFragment();
     }
 
     private boolean loadFragment(Fragment fragment) {
@@ -65,17 +67,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     public void onSubmitClicked(int total){
-        ResultFragment resultFragment = new ResultFragment();
-        resultFragment.setInfo(String.valueOf(total));
+        String simpan = String.valueOf(total);
+        resultFragment.setInfo("Silakan Lakukan Pembayaran ke Kasir sebesar : " + simpan);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, resultFragment)
                 .commit();
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
+//    @Override
+//    public void onFragmentInteraction(Uri uri) {
+//
+//    }
 
     @Override
     public void onBackPressed() {

@@ -44,17 +44,15 @@ public class Pemesanan extends Fragment{
             @Override
             public void onClick(View view) {
                 if(mListener != null){
+                    String nm = name.getText().toString();
+                    String ad = address.getText().toString();
+                    String tl = tlp.getText().toString();
                     String penumpangString = jp.getText().toString();
-                    int checkId = keretagroup.getCheckedRadioButtonId();
-                    if((checkId != -1) && !TextUtils.isEmpty(penumpangString)){
+                    int checkedId = keretagroup.getCheckedRadioButtonId();
+                    if((checkedId != -1) && !TextUtils.isEmpty(penumpangString)){
                         int jumlah = Integer.parseInt(penumpangString);
-                        int krt;
-                        if (checkId == R.id.gajayana) {
-                            krt = 0;
-                        } else{
-                            krt = 1;
-                        }
-                        Pesan pesan = new Pesan(jumlah, krt);
+                        int k = (checkedId == R.id.gajayana) ? Pesan.GAJAYANA : Pesan.MATARMAJA;
+                        Pesan pesan = new Pesan(jumlah, k);
                         mListener.onSubmitClicked(pesan.getTotal());
                     }
                 } else{

@@ -9,6 +9,6 @@
         android:icon="@drawable/ic_schedule" />
     <item android:id="@+id/action_info"
         android:title="About"
-        android:icon="@drawable/ic_information" />
+        android:icon="@drawable/icons8_about_24" />
 
 </menu>
