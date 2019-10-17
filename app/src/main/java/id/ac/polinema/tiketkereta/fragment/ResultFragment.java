@@ -42,7 +42,7 @@ public class ResultFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_result, container, false);
-        TextView info = view.findViewById(R.id.resultText);
+        TextView info = view.findViewById(R.id.textView14);
         String n = this.getInfo();
         info.setText(n);
         return view;
