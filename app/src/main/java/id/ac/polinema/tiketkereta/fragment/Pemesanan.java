@@ -55,7 +55,7 @@ public class Pemesanan extends Fragment{
 
                         int k = (checkedId == R.id.gajayana) ? Pesan.GAJAYANA : Pesan.MATARMAJA;
                         Pesan pesan = new Pesan(jumlah, k);
-                        mListener.onSubmitClicked(pesan.getTotal());
+                        mListener.onSubmitClicked(pesan.getPenumpang(),pesan.getTotal());
                     }  else if(TextUtils.isEmpty(nm)){
                         Toast.makeText(getActivity(), "Nama Harus Diisi!", Toast.LENGTH_SHORT).show();
                     } else if(TextUtils.isEmpty(ad)){
@@ -115,6 +115,6 @@ public class Pemesanan extends Fragment{
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
 //        void onFragmentInteraction(Uri uri);
-        void onSubmitClicked(int total);
+        void onSubmitClicked(int penumpang,int total);
     }
 }

@@ -15,6 +15,10 @@ public class Pesan {
         this.total = calculate();
     }
 
+    public int getPenumpang() {
+        return penumpang;
+}
+
     public int getTotal(){
         return total;
     }

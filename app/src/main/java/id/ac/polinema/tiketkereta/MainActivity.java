@@ -66,9 +66,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
-    public void onSubmitClicked(int total){
+    public void onSubmitClicked(int penumpang,int total){
         String simpan = String.valueOf(total);
-        resultFragment.setInfo("Selamat Pesanan Anda Sedang Diproses !\n\nSilakan Lakukan Pembayaran ke Loket sebesar : " + simpan);
+        String jumlah = String.valueOf(penumpang);
+        resultFragment.setInfo("Silakan Lakukan Pembayaran sebesar : "+simpan+"\nJumlah Penumpang : "+jumlah);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, resultFragment)
                 .commit();
