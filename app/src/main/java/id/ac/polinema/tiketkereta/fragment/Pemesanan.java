@@ -49,11 +49,25 @@ public class Pemesanan extends Fragment{
                     String tl = tlp.getText().toString();
                     String penumpangString = jp.getText().toString();
                     int checkedId = keretagroup.getCheckedRadioButtonId();
+                    int jumlah = Integer.parseInt(penumpangString);
+
                     if((checkedId != -1) && !TextUtils.isEmpty(penumpangString)){
-                        int jumlah = Integer.parseInt(penumpangString);
+
                         int k = (checkedId == R.id.gajayana) ? Pesan.GAJAYANA : Pesan.MATARMAJA;
                         Pesan pesan = new Pesan(jumlah, k);
                         mListener.onSubmitClicked(pesan.getTotal());
+                    }  else if(TextUtils.isEmpty(nm)){
+                        Toast.makeText(getActivity(), "Nama Harus Diisi!", Toast.LENGTH_SHORT).show();
+                    } else if(TextUtils.isEmpty(ad)){
+                        Toast.makeText(getActivity(), "Alamat Harus Diisi!", Toast.LENGTH_SHORT).show();
+                    } else if(TextUtils.isEmpty(tl)){
+                        Toast.makeText(getActivity(), "Nomor Telepon Harus Diisi!", Toast.LENGTH_SHORT).show();
+                    } else if(TextUtils.isEmpty(penumpangString)){
+                        Toast.makeText(getActivity(), "Jumlah Penumpang Harus Diisi!", Toast.LENGTH_SHORT).show();
+                    } else if(TextUtils.isEmpty(nm) && TextUtils.isEmpty(ad) && TextUtils.isEmpty(tl) && TextUtils.isEmpty(penumpangString) && checkedId == -1){
+                        Toast.makeText(getActivity(), "Tidak ada data yang diisi", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Silakan Pilih Kereta!", Toast.LENGTH_SHORT).show();
                     }
                 } else{
                     Toast.makeText(getActivity(), "Tidak Ada data yang diisi", Toast.LENGTH_SHORT).show();
